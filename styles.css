@@ -1,0 +1,647 @@
+/* Base styles and typography */
+body {
+    position: relative;
+    background: #000;
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    will-change: transform;
+}
+
+h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+}
+
+/* Navigation styling */
+.navbar-brand {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    letter-spacing: 1px;
+    padding: 0;
+    position: static;
+    overflow: visible;
+}
+
+.brand-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transition: transform 0.3s ease;
+}
+
+.navbar-brand:hover .brand-container {
+    transform: scale(1.05);
+}
+
+.brand-text {
+    font-size: 1.5rem;
+}
+
+.navbar-brand-image {
+    height: 35px;
+    width: auto;
+}
+
+.nav-link {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: rgba(255, 255, 255, 0.8) !important;
+    transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #fff !important;
+}
+
+/* Typography classes */
+.lead {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    line-height: 1.8;
+}
+
+.btn {
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Background animation canvas */
+#motion-bg {
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 0;
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+#motion-bg canvas {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+/* Navigation bar effects */
+.navbar {
+    transition: background-color 0.2s ease;
+    will-change: background-color;
+}
+.navbar.scrolled {
+    background-color: #000;
+}
+
+/* Hero section styling */
+.hero-section {
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    color: white;
+    overflow: hidden;
+    will-change: transform;
+    background: transparent;
+}
+.hero-section .video-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    will-change: transform;
+}
+.hero-section .video-background iframe {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100vw;
+    height: 100vh;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    object-fit: cover;
+    will-change: transform;
+}
+
+/* Responsive video background */
+@media (min-aspect-ratio: 16/9) {
+    .hero-section .video-background iframe {
+        height: 56.25vw;
+    }
+}
+@media (max-aspect-ratio: 16/9) {
+    .hero-section .video-background iframe {
+        width: 177.78vh;
+    }
+}
+
+/* Hero overlay and content */
+.hero-section .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.7);
+    z-index: -1;
+}
+.hero-content {
+    transform: translateZ(0);
+    will-change: transform;
+    position: relative;
+    z-index: 2;
+}
+
+/* Add glow effect to hero text */
+.hero-content h1 {
+    text-shadow: 0 0 10px rgba(229, 9, 20, 0.3),
+                 0 0 20px rgba(229, 9, 20, 0.2),
+                 0 0 30px rgba(229, 9, 20, 0.1);
+    animation: glowPulse 3s ease-in-out infinite;
+}
+
+.hero-content .lead {
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.3),
+                 0 0 16px rgba(255, 255, 255, 0.2),
+                 0 0 24px rgba(255, 255, 255, 0.1);
+}
+
+@keyframes glowPulse {
+    0% {
+        text-shadow: 0 0 10px rgba(229, 9, 20, 0.3),
+                     0 0 20px rgba(229, 9, 20, 0.2),
+                     0 0 30px rgba(229, 9, 20, 0.1);
+    }
+    50% {
+        text-shadow: 0 0 15px rgba(229, 9, 20, 0.4),
+                     0 0 25px rgba(229, 9, 20, 0.3),
+                     0 0 35px rgba(229, 9, 20, 0.2);
+    }
+    100% {
+        text-shadow: 0 0 10px rgba(229, 9, 20, 0.3),
+                     0 0 20px rgba(229, 9, 20, 0.2),
+                     0 0 30px rgba(229, 9, 20, 0.1);
+    }
+}
+
+/* Add button hover animation */
+.hero-section .btn-danger {
+    position: relative;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    background-color: #e50914;
+    border: none;
+    overflow: hidden;
+}
+
+.hero-section .btn-danger:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(229, 9, 20, 0.6);
+    background-color: #f40612;
+}
+
+.hero-section .btn-danger:before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 70%);
+    transform: scale(0);
+    opacity: 0;
+    transition: transform 0.6s ease-out, opacity 0.5s ease-out;
+}
+
+.hero-section .btn-danger:hover:before {
+    transform: scale(1);
+    opacity: 1;
+}
+
+/* Project cards styling */
+.project-card {
+    margin-bottom: 30px;
+    transition: all 0.2s ease;
+    background: rgba(0,0,0,0.4);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255,255,255,0.1);
+    color: white;
+    will-change: transform;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    background: rgba(0,0,0,0.5);
+}
+
+.project-card .card-body {
+    background: transparent;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.card-title {
+    color: rgba(255,255,255,0.95);
+    font-weight: 600;
+}
+
+.card-text {
+    color: rgba(255,255,255,0.8);
+}
+
+/* Skills section styling */
+.skill-item {
+    margin-bottom: 30px;
+    color: white;
+}
+
+.skill-item img, .skill-category img {
+    height: 1em;
+    width: auto;
+    vertical-align: middle;
+    margin-right: 8px;
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transform-origin: center;
+}
+
+.skill-item:hover img, .skill-category:hover img {
+    transform: scale(1.5) rotate(5deg);
+}
+
+.skill-item h4, .skill-category h3 {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.progress-bar {
+    background-color: #e50914;
+    transition: width 1s ease-out;
+}
+
+/* Add pop animation for initial load */
+@keyframes popIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.3) rotate(-10deg);
+    }
+    70% {
+        transform: scale(1.2) rotate(5deg);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) rotate(0deg);
+    }
+}
+
+.skill-item img, .skill-category img {
+    animation: popIn 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+    opacity: 0;
+}
+
+/* Stagger the animations */
+.skill-item:nth-child(1) img, .skill-category:nth-child(1) img { animation-delay: 0.1s; }
+.skill-item:nth-child(2) img, .skill-category:nth-child(2) img { animation-delay: 0.2s; }
+.skill-item:nth-child(3) img, .skill-category:nth-child(3) img { animation-delay: 0.3s; }
+.skill-item:nth-child(4) img, .skill-category:nth-child(4) img { animation-delay: 0.4s; }
+.skill-item:nth-child(5) img, .skill-category:nth-child(5) img { animation-delay: 0.5s; }
+
+/* Section positioning */
+section {
+    position: relative;
+    z-index: 1;
+    color: white;
+    background: transparent;
+}
+
+/* Card text colors */
+.card-title, .card-text {
+    color: white;
+}
+
+/* Form styling */
+.form-control {
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.2);
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    transition: all 0.2s ease;
+}
+
+.form-control::placeholder {
+    color: rgba(255,255,255,0.7);
+}
+
+.form-control:focus {
+    background: rgba(255,255,255,0.15);
+    border-color: rgba(255,255,255,0.3);
+    color: white;
+}
+
+/* Video container aspect ratio */
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Resume page styling */
+.resume-container {
+    padding-top: 120px;
+    padding-bottom: 60px;
+}
+
+.resume-section {
+    margin-bottom: 50px;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.resume-section:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(229, 9, 20, 0.2);
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    padding-bottom: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+}
+
+.section-header:hover {
+    border-bottom-color: rgba(229, 9, 20, 0.5);
+}
+
+.toggle-icon {
+    font-size: 0.8em;
+    color: #e50914;
+    transition: transform 0.3s ease;
+}
+
+.section-header[aria-expanded="false"] .toggle-icon {
+    transform: rotate(-90deg);
+}
+
+.collapse {
+    transition: all 0.35s ease-in-out;
+}
+
+.collapse:not(.show) {
+    display: none;
+}
+
+.collapsing {
+    height: 0;
+    overflow: hidden;
+    transition: height 0.35s ease;
+}
+
+/* Section content animations */
+.collapse.show {
+    animation: fadeInContent 0.5s ease forwards;
+}
+
+.collapse.show .skill-item img,
+.collapse.show .skill-category img {
+    animation: popIn 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+    opacity: 0;
+}
+
+.collapse.show .skill-item:nth-child(1) img,
+.collapse.show .skill-category:nth-child(1) img { animation-delay: 0.3s; }
+.collapse.show .skill-item:nth-child(2) img,
+.collapse.show .skill-category:nth-child(2) img { animation-delay: 0.4s; }
+.collapse.show .skill-item:nth-child(3) img,
+.collapse.show .skill-category:nth-child(3) img { animation-delay: 0.5s; }
+.collapse.show .skill-item:nth-child(4) img,
+.collapse.show .skill-category:nth-child(4) img { animation-delay: 0.6s; }
+.collapse.show .skill-item:nth-child(5) img,
+.collapse.show .skill-category:nth-child(5) img { animation-delay: 0.7s; }
+
+@keyframes fadeInContent {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.section-title {
+    font-family: 'Playfair Display', serif;
+    color: #fff;
+    margin-bottom: 25px;
+    font-size: 2rem;
+}
+
+.resume-text {
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.8;
+    font-size: 1.1rem;
+}
+
+.experience-item {
+    margin-bottom: 30px;
+}
+
+.experience-item h3 {
+    color: #e50914;
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+}
+
+.date {
+    color: rgba(255, 255, 255, 0.7);
+    font-style: italic;
+    margin-bottom: 15px;
+}
+
+.achievement-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.achievement-list li {
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.skill-category {
+    margin-bottom: 20px;
+}
+
+.skill-category h3 {
+    color: #e50914;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.skill-category p {
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.6;
+}
+
+.additional-skills p {
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+}
+
+.additional-skills strong {
+    color: #e50914;
+    margin-right: 10px;
+}
+
+/* Interactive elements styling */
+.btn, .nav-link, a:not(.navbar-brand) {
+    position: relative;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    overflow: hidden;
+}
+
+/* Remove constant glow from buttons */
+.btn-danger {
+    background-color: #e50914;
+    border: none;
+    box-shadow: none;
+}
+
+/* Add hover effects */
+.btn-danger:hover, .nav-link:hover, a:not(.navbar-brand):hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(229, 9, 20, 0.6);
+}
+
+.btn-danger:hover {
+    background-color: #f40612;
+}
+
+/* Add rounded corners to navbar glow */
+.nav-link:hover {
+    box-shadow: 0 0 20px rgba(229, 9, 20, 0.6);
+    border-radius: 8px;
+    padding: 0.5rem 1rem;
+}
+
+/* Radial gradient effect */
+.btn:before, .nav-link:before, a:not(.navbar-brand):before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 70%);
+    transform: scale(0);
+    opacity: 0;
+    transition: transform 0.6s ease-out, opacity 0.5s ease-out;
+}
+
+.btn:hover:before, .nav-link:hover:before, a:not(.navbar-brand):hover:before {
+    transform: scale(1);
+    opacity: 1;
+}
+
+/* Remove hover effect from navbar brand */
+.navbar-brand:before {
+    display: none;
+}
+
+/* Vertical Progress Bar */
+.vertical-progress {
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 4px;
+    height: 100%;
+    min-height: 100vh;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 9999;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.vertical-progress:hover {
+    width: 8px;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.vertical-progress-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0%;
+    background: linear-gradient(to bottom,
+        rgba(229, 9, 20, 0.8),
+        rgba(255, 49, 83, 0.8),
+        rgba(229, 9, 20, 0.8));
+    transition: height 0.1s ease-out;
+    min-height: 0;
+    max-height: 100%;
+}
+
+.vertical-progress:hover .vertical-progress-bar {
+    background: linear-gradient(to bottom,
+        rgba(229, 9, 20, 1),
+        rgba(255, 49, 83, 1),
+        rgba(229, 9, 20, 1));
+}
+
+/* Add glow effect on hover */
+.vertical-progress:hover .vertical-progress-bar::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 70%);
+    animation: glowPulse 2s infinite;
+}
+
+@keyframes glowPulse {
+    0% {
+        opacity: 0.5;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0.5;
+    }
+} 

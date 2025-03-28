@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grafix - Resume</title>
+    <link rel="icon" type="image/png" href="moon-raven.png" sizes="32x32">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .experience-item h3, .education-item h3, .skill-category h3 {
+            color: #e0745d;
+        }
+    </style>
+</head>
+<body>
+    <!-- Vertical Progress Bar -->
+    <div class="vertical-progress">
+        <div class="vertical-progress-bar"></div>
+    </div>
+
+    <!-- Motion background container -->
+    <div id="motion-bg" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1;"></div>
+
+    <!-- Navigation bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <div class="brand-container">
+                    <img src="moon-raven.png" alt="Moon Raven Logo" class="navbar-brand-image" style="border-radius: 50%; object-fit: cover;">
+                    <span class="brand-text">Grafix</span>
+                </div>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#skills">Skills</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#projects">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#contact">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="resume.html">Resume</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Resume Content -->
+    <div class="container resume-container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <!-- Summary Section -->
+                <section class="resume-section">
+                    <div class="section-header" data-bs-toggle="collapse" data-bs-target="#summaryContent" aria-expanded="true">
+                        <h2 class="section-title">🎬 Summary</h2>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                    <div class="collapse show" id="summaryContent">
+                        <p class="resume-text">
+                            Creative and detail-oriented Video Editor with expertise in long-form video essays, short-form content, and cinematic storytelling. Skilled in motion graphics, AI-enhanced visuals, and audience engagement strategies, with a track record of helping creators grow their digital presence. Proficient in Adobe Premiere Pro, DaVinci Resolve, and After Effects. Passionate about storytelling, AI advancements, and content optimization for digital platforms.
+                        </p>
+                    </div>
+                </section>
+
+                <!-- Work Experience -->
+                <section class="resume-section">
+                    <div class="section-header" data-bs-toggle="collapse" data-bs-target="#experienceContent" aria-expanded="true">
+                        <h2 class="section-title">💼 Work Experience</h2>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                    <div class="collapse show" id="experienceContent">
+                        <div class="experience-item">
+                            <h3>🎞️ Head Video Editor – ElodineCodes</h3>
+                            <p class="date">Dec 2024 – Present</p>
+                            <ul class="achievement-list">
+                                <li>✅ Drove the channel to monetization and consistent growth.</li>
+                                <li>✅ Edited AI tech updates, historical documentaries, and media analysis videos in a Lemmino-inspired video essay style.</li>
+                                <li>✅ Integrated AI-driven SFX, music, and motion graphics for enhanced engagement.</li>
+                                <li>✅ The latest video gained 300+ new subscribers and increased audience interaction.</li>
+                            </ul>
+                        </div>
+
+                        <div class="experience-item">
+                            <h3>🎥 Freelance Video Editor</h3>
+                            <p class="date">Jan 2022 – Present</p>
+                            <ul class="achievement-list">
+                                <li>✅ Worked with various agencies and independent creators to produce content for YouTube, Instagram, and other platforms.</li>
+                                <li>✅ Specialized in motion graphics, color grading, and storytelling techniques for high audience retention.</li>
+                                <li>✅ Regularly used AI tools for music generation, subtitles, and automation to streamline post-production.</li>
+                            </ul>
+                        </div>
+
+                        <div class="experience-item">
+                            <h3>🎬 Video Editor Intern – JBG Ventures</h3>
+                            <ul class="achievement-list">
+                                <li>✅ Created short-form social media content for Instagram to establish brand presence.</li>
+                                <li>✅ Designed engaging videos aligning with the company's aesthetic and messaging.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Technical Skills -->
+                <section class="resume-section">
+                    <div class="section-header" data-bs-toggle="collapse" data-bs-target="#skillsContent" aria-expanded="true">
+                        <h2 class="section-title">🎨 Technical Skills</h2>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                    <div class="collapse show" id="skillsContent">
+                        <div class="skills-grid">
+                            <div class="skill-category">
+                                <h3><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Adobe_Premiere_Pro_CC_icon.svg/1200px-Adobe_Premiere_Pro_CC_icon.svg.png" alt="Premiere Pro Icon" style="height: 1em; width: auto; vertical-align: middle;"> Editing Software</h3>
+                                <p>Adobe Premiere Pro, DaVinci Resolve, After Effects</p>
+                            </div>
+                            <div class="skill-category">
+                                <h3><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Adobe_After_Effects_CC_icon.svg/2101px-Adobe_After_Effects_CC_icon.svg.png" alt="After Effects Icon" style="height: 1em; width: auto; vertical-align: middle;"> Motion Graphics & VFX</h3>
+                                <p>After Effects, Typography, AI-powered automation</p>
+                            </div>
+                            <div class="skill-category">
+                                <h3><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Audacity_Logo.svg/1200px-Audacity_Logo.svg.png" alt="Audacity Icon" style="height: 1em; width: auto; vertical-align: middle;"> Audio & Music</h3>
+                                <p>AI-generated SFX, sound design, voice enhancement</p>
+                            </div>
+                            <div class="skill-category">
+                                <h3><img src="https://upload.wikimedia.org/wikipedia/commons/4/4d/DaVinci_Resolve_Studio.png" alt="DaVinci Resolve Icon" style="height: 1em; width: auto; vertical-align: middle;"> Color Grading</h3>
+                                <p>DaVinci Resolve for cinematic visuals</p>
+                            </div>
+                            <div class="skill-category">
+                                <h3><img src="https://cdn.iconscout.com/icon/free/png-256/free-youtube-logo-icon-download-in-svg-png-gif-file-formats--social-media-70-flat-icons-color-pack-logos-432560.png" alt="YouTube Icon" style="height: 1em; width: auto; vertical-align: middle;"> Content Optimization</h3>
+                                <p>YouTube SEO, audience retention strategies</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Additional Skills -->
+                <section class="resume-section">
+                    <div class="section-header" data-bs-toggle="collapse" data-bs-target="#additionalSkillsContent" aria-expanded="true">
+                        <h2 class="section-title">🔥 Additional Skills</h2>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                    <div class="collapse show" id="additionalSkillsContent">
+                        <div class="additional-skills">
+                            <p><strong>📷 Photography:</strong> Digital, Wildlife, Sports, Event</p>
+                            <p><strong>💻 Software:</strong> Microsoft Office (Word, Excel), Linux, Windows</p>
+                            <p><strong>🌍 Languages:</strong> English (Fluent)</p>
+                            <p><strong>🕰️ Soft Skills:</strong> Communication, Research, Time Management</p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html> 

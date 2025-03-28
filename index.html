@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Document setup and metadata -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grafix Portfolio</title>
+    <link rel="icon" type="image/png" href="moon-raven.png" sizes="32x32">
+    <style>
+        link[rel="icon"] {
+            border-radius: 50%;
+            overflow: hidden;
+        }
+    </style>
+    <!-- External CSS and Font imports -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Vertical Progress Bar -->
+    <div class="vertical-progress">
+        <div class="vertical-progress-bar"></div>
+    </div>
+
+    <!-- Motion background container -->
+    <div id="motion-bg" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1;"></div>
+
+    <!-- Navigation bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="#">
+                <div class="brand-container">
+                    <img src="moon-raven.png" alt="Moon Raven Logo" class="navbar-brand-image" style="border-radius: 50%; object-fit: cover;">
+                    <span class="brand-text">Grafix</span>
+                </div>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#skills">Skills</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#projects">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="resume.html">Resume</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero section with video background -->
+    <section class="hero-section" id="about">
+        <div class="video-background">
+            <iframe id="player" src="https://www.youtube.com/embed/AukR5L1NcEQ?autoplay=1&mute=1&enablejsapi=1&controls=0&showinfo=0&rel=0&version=3&playerapiid=ytplayer" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+        </div>
+        <div class="overlay"></div>
+        <div class="container text-center hero-content">
+            <h1 class="display-4 mb-4">Creative Video Editor</h1>
+            <p class="lead mb-4">Transforming ideas into compelling visual stories</p>
+            <a href="#projects" class="btn btn-danger btn-lg">View My Work</a>
+        </div>
+    </section>
+
+    <!-- About section -->
+    <section class="container py-5">
+        <div class="row">
+            <div class="col-md-8 mx-auto">
+                <p class="lead text-center">
+                    I'm a passionate video editor with expertise in creating compelling visual narratives.
+                    With years of experience in post-production, I specialize in turning raw footage into
+                    engaging stories that captivate audiences.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills section with animated progress bars -->
+    <section class="container py-5" id="skills">
+        <h2 class="text-center mb-5">Skills & Expertise</h2>
+        <div class="row justify-content-center">
+            <div class="col-md-3 skill-item">
+                <h4>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Adobe_Premiere_Pro_CC_icon.svg/1200px-Adobe_Premiere_Pro_CC_icon.svg.png" 
+                         alt="Premiere Pro Icon"
+                         style="height: 1em; width: auto; vertical-align: middle; margin-right: 8px;">
+                    Adobe Premiere Pro
+                </h4>
+                <div class="progress">
+                    <div class="progress-bar" style="width: 0%; transition: width 1.5s ease-out" data-width="95%"></div>
+                </div>
+                <ul class="list-unstyled mt-3">
+                    <li>• Sequence Management</li>
+                    <li>• Timeline Organization</li>
+                    <li>• Multi-camera Editing</li>
+                    <li>• Advanced Timeline Workflows</li>
+                </ul>
+            </div>
+            <div class="col-md-3 skill-item">
+                <h4>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Adobe_After_Effects_CC_icon.svg/2101px-Adobe_After_Effects_CC_icon.svg.png"
+                         alt="After Effects Icon"
+                         style="height: 1em; width: auto; vertical-align: middle; margin-right: 8px;">
+                    After Effects
+                </h4>
+                <div class="progress">
+                    <div class="progress-bar" style="width: 0%; transition: width 1.5s ease-out" data-width="90%"></div>
+                </div>
+                <ul class="list-unstyled mt-3">
+                    <li>• 2D/3D Animations</li>
+                    <li>• Motion Graphics</li>
+                    <li>• Basic Visual Effects</li>
+                    <li>• Pin Animation</li>
+                </ul>
+            </div>
+            <div class="col-md-3 skill-item">
+                <h4>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/4/4d/DaVinci_Resolve_Studio.png"
+                         alt="DaVinci Resolve Icon"
+                         style="height: 1em; width: auto; vertical-align: middle; margin-right: 8px;">
+                    DaVinci Resolve
+                </h4>
+                <div class="progress">
+                    <div class="progress-bar" style="width: 0%; transition: width 1.5s ease-out" data-width="75%"></div>
+                </div>
+                <ul class="list-unstyled mt-3">
+                    <li>• Color Grading</li>
+                    <li>• Color Correction</li>
+                    <li>• LUT Management</li>
+                    <li>• Color Matching</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects section with video embeds -->
+    <section class="container py-5" id="projects">
+        <h2 class="text-center mb-5">Featured Projects</h2>
+        <div class="row">
+            <!-- 16:9 Videos -->
+            <div class="col-md-6 mb-4">
+                <div class="card project-card">
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/I8HYHYsqkwU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Video Essay / Documentary</h5>
+                        <p class="card-text">An in-depth exploration of AI and cryptography's evolution, featuring dynamic motion graphics and expert insights.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 mb-4">
+                <div class="card project-card">
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/AukR5L1NcEQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Media Analysis</h5>
+                        <p class="card-text">In-depth video essay exploring cultural trends and media theory through engaging visual storytelling.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 mb-4">
+                <div class="card project-card">
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/dVICHgxW6tg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Real Estate</h5>
+                        <p class="card-text">Cinematic real estate showcase highlighting luxury properties and amenities.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 mb-4">
+                <div class="card project-card">
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/rX66EQiqioE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Informative Content</h5>
+                        <p class="card-text">Educational video content created for YouTube, delivering valuable insights and knowledge.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 9:16 Videos in one row -->
+            <div class="col-md-4 mb-4">
+                <div class="card project-card">
+                    <div class="video-container" style="padding-bottom: 177.78%">
+                        <iframe src="https://www.youtube.com/embed/tMLfheh4nFo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Fitness & Yoga Content</h5>
+                        <p class="card-text">Short-form wellness content optimized for Instagram, featuring yoga flows and fitness routines.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card project-card">
+                    <div class="video-container" style="padding-bottom: 177.78%">
+                        <iframe src="https://www.youtube.com/embed/i0xnAO8epT4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Nutrition & Diet Content</h5>
+                        <p class="card-text">Educational short-form content about healthy eating habits and dietary guidelines for Instagram.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card project-card">
+                    <div class="video-container" style="padding-bottom: 177.78%">
+                        <iframe src="https://www.youtube.com/embed/xJwyhnT0yiI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Daily Vlog</h5>
+                        <p class="card-text">Personal daily vlog content optimized for Instagram's vertical format.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 1:1 Videos centered and smaller -->
+            <div class="col-md-4 offset-md-2 mb-4">
+                <div class="card project-card" style="max-width: 400px; margin: 0 auto;">
+                    <div class="video-container" style="padding-bottom: 100%">
+                        <iframe src="https://www.youtube.com/embed/i_UwRKCFZic" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Instagram Reels</h5>
+                        <p class="card-text">Daily vlogs and personal reflections crafted into engaging short-form content.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card project-card" style="max-width: 400px; margin: 0 auto;">
+                    <div class="video-container" style="padding-bottom: 100%">
+                        <iframe src="https://www.youtube.com/embed/9nHWXvTrIn4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Motivational Content</h5>
+                        <p class="card-text">Inspirational short-form content designed to motivate and empower Instagram audiences.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact form section -->
+    <section class="container py-5" id="contact">
+        <h2 class="text-center mb-5">Get In Touch</h2>
+        <div class="row">
+            <div class="col-md-6 mx-auto">
+                <form action="https://formsubmit.co/grafixitis@gmail.com" method="POST" target="_blank">
+                    <input type="hidden" name="_subject" value="New Portfolio Contact Form Submission">
+                    <input type="hidden" name="_template" value="table">
+                    <input type="hidden" name="_next" value="thank-you.html">
+                    <input type="hidden" name="_autoresponse" value="Thank you for your message! I'll get back to you soon.">
+                    <div class="mb-3">
+                        <input type="text" name="name" class="form-control" placeholder="Your Name" required>
+                    </div>
+                    <div class="mb-3">
+                        <input type="email" name="email" class="form-control" placeholder="Your Email" required>
+                    </div>
+                    <div class="mb-3">
+                        <textarea name="message" class="form-control" rows="5" placeholder="Your Message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-danger w-100">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-4">
+        <p class="mb-0">© 2025 Grafix Portfolio. All rights reserved.</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
