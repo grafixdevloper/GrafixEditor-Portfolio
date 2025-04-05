@@ -7,7 +7,6 @@ body {
     margin: 0;
     padding: 0;
     overflow-x: hidden;
-    will-change: transform;
 }
 
 h1, h2, h3 {
@@ -91,11 +90,170 @@ h1, h2, h3 {
 
 /* Navigation bar effects */
 .navbar {
-    transition: background-color 0.2s ease;
-    will-change: background-color;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    z-index: 1030;
+    padding: 1rem 0;
+    background-color: transparent;
 }
+
 .navbar.scrolled {
-    background-color: #000;
+    background-color: rgba(0, 0, 0, 0.5); /* Changed to semi-transparent */
+    backdrop-filter: blur(10px); /* Add blur effect for better readability */
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Fix for black bar at top */
+body {
+    padding-top: 0; /* Remove any top padding */
+}
+
+/* Ensure hero section starts at the top */
+.hero-section {
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    color: white;
+    overflow: hidden;
+    background: transparent;
+    margin-top: 0; /* Remove any top margin */
+    padding-top: 0; /* Remove any top padding */
+}
+
+/* Ensure navbar links are visible */
+.nav-link {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: rgba(255, 255, 255, 0.8) !important;
+    transition: all 0.3s ease;
+    padding: 0.5rem 1rem; /* Ensure consistent padding */
+}
+
+.nav-link:hover {
+    color: #fff !important;
+    box-shadow: 0 0 20px rgba(229, 9, 20, 0.6);
+    border-radius: 8px;
+}
+
+/* Fix for navbar toggler on mobile */
+.navbar-toggler {
+    border-color: rgba(255, 255, 255, 0.5);
+    padding: 0.25rem 0.5rem;
+    margin-right: 1rem;
+    transition: transform 0.3s ease;
+    position: relative;
+    z-index: 1032; /* Higher z-index to stay on top */
+}
+
+.navbar-toggler:focus {
+    outline: none;
+    box-shadow: 0 0 0 0.2rem rgba(229, 9, 20, 0.25);
+}
+
+.navbar-toggler[aria-expanded="true"] {
+    transform: rotate(90deg); /* Spin animation when expanded */
+}
+
+/* Create hamburger to X animation */
+.navbar-toggler-icon {
+    background-image: none !important;
+    position: relative;
+    height: 24px;
+    width: 24px;
+    transition: all 0.3s ease;
+}
+
+.navbar-toggler-icon::before,
+.navbar-toggler-icon::after,
+.navbar-toggler-icon span {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: rgba(255, 255, 255, 0.8);
+    transition: all 0.3s ease;
+}
+
+.navbar-toggler-icon::before {
+    top: 0;
+}
+
+.navbar-toggler-icon span {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.navbar-toggler-icon::after {
+    bottom: 0;
+}
+
+/* X transformation when toggled */
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::before {
+    transform: translateY(11px) rotate(45deg);
+}
+
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon span {
+    opacity: 0;
+}
+
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::after {
+    transform: translateY(-11px) rotate(-45deg);
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 0.8)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+    transition: all 0.3s ease;
+}
+
+/* Ensure navbar is always on top for mobile */
+@media (max-width: 991.98px) {
+    .navbar {
+        position: sticky;
+        top: 0;
+        z-index: 1050; /* Higher z-index for mobile */
+    }
+    
+    .navbar-collapse {
+        background-color: rgba(0, 0, 0, 0.7); /* More translucent background */
+        backdrop-filter: blur(10px); /* Add blur effect for better readability */
+        -webkit-backdrop-filter: blur(10px);
+        padding: 1rem;
+        border-radius: 0 0 8px 8px;
+        margin-top: 0.5rem;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+        border: 1px solid rgba(255, 255, 255, 0.1); /* Subtle border */
+    }
+    
+    /* Add glow effect to toggler on hover */
+    .navbar-toggler:hover {
+        box-shadow: 0 0 10px rgba(229, 9, 20, 0.6);
+    }
+    
+    /* Add animation to navbar collapse */
+    .navbar-collapse.collapsing {
+        transition: height 0.3s ease;
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+    }
+    
+    .navbar-collapse.show {
+        animation: fadeIn 0.3s ease forwards;
+    }
+    
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(-10px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
 }
 
 /* Hero section styling */
@@ -153,87 +311,42 @@ h1, h2, h3 {
     z-index: -1;
 }
 .hero-content {
-    transform: translateZ(0);
-    will-change: transform;
     position: relative;
     z-index: 2;
 }
 
-/* Add glow effect to hero text */
+/* Simplified glow effect to hero text */
 .hero-content h1 {
-    text-shadow: 0 0 10px rgba(229, 9, 20, 0.3),
-                 0 0 20px rgba(229, 9, 20, 0.2),
-                 0 0 30px rgba(229, 9, 20, 0.1);
-    animation: glowPulse 3s ease-in-out infinite;
+    text-shadow: 0 0 15px rgba(229, 9, 20, 0.3);
 }
 
 .hero-content .lead {
-    text-shadow: 0 0 8px rgba(255, 255, 255, 0.3),
-                 0 0 16px rgba(255, 255, 255, 0.2),
-                 0 0 24px rgba(255, 255, 255, 0.1);
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
 }
 
-@keyframes glowPulse {
-    0% {
-        text-shadow: 0 0 10px rgba(229, 9, 20, 0.3),
-                     0 0 20px rgba(229, 9, 20, 0.2),
-                     0 0 30px rgba(229, 9, 20, 0.1);
-    }
-    50% {
-        text-shadow: 0 0 15px rgba(229, 9, 20, 0.4),
-                     0 0 25px rgba(229, 9, 20, 0.3),
-                     0 0 35px rgba(229, 9, 20, 0.2);
-    }
-    100% {
-        text-shadow: 0 0 10px rgba(229, 9, 20, 0.3),
-                     0 0 20px rgba(229, 9, 20, 0.2),
-                     0 0 30px rgba(229, 9, 20, 0.1);
-    }
-}
-
-/* Add button hover animation */
+/* Simplified button hover animation */
 .hero-section .btn-danger {
     position: relative;
-    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: all 0.3s ease;
     background-color: #e50914;
     border: none;
-    overflow: hidden;
 }
 
 .hero-section .btn-danger:hover {
     transform: scale(1.05);
-    box-shadow: 0 0 20px rgba(229, 9, 20, 0.6);
+    box-shadow: 0 0 10px rgba(229, 9, 20, 0.5);
     background-color: #f40612;
-}
-
-.hero-section .btn-danger:before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 70%);
-    transform: scale(0);
-    opacity: 0;
-    transition: transform 0.6s ease-out, opacity 0.5s ease-out;
-}
-
-.hero-section .btn-danger:hover:before {
-    transform: scale(1);
-    opacity: 1;
 }
 
 /* Project cards styling */
 .project-card {
     margin-bottom: 30px;
-    transition: all 0.2s ease;
+    transition: transform 0.2s ease, background 0.2s ease;
     background: rgba(0,0,0,0.4);
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
     border: 1px solid rgba(255,255,255,0.1);
     color: white;
-    will-change: transform;
 }
 
 .project-card:hover {
@@ -266,12 +379,11 @@ h1, h2, h3 {
     width: auto;
     vertical-align: middle;
     margin-right: 8px;
-    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    transform-origin: center;
+    transition: transform 0.3s ease;
 }
 
 .skill-item:hover img, .skill-category:hover img {
-    transform: scale(1.5) rotate(5deg);
+    transform: scale(1.2);
 }
 
 .skill-item h4, .skill-category h3 {
@@ -284,33 +396,6 @@ h1, h2, h3 {
     background-color: #e50914;
     transition: width 1s ease-out;
 }
-
-/* Add pop animation for initial load */
-@keyframes popIn {
-    0% {
-        opacity: 0;
-        transform: scale(0.3) rotate(-10deg);
-    }
-    70% {
-        transform: scale(1.2) rotate(5deg);
-    }
-    100% {
-        opacity: 1;
-        transform: scale(1) rotate(0deg);
-    }
-}
-
-.skill-item img, .skill-category img {
-    animation: popIn 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
-    opacity: 0;
-}
-
-/* Stagger the animations */
-.skill-item:nth-child(1) img, .skill-category:nth-child(1) img { animation-delay: 0.1s; }
-.skill-item:nth-child(2) img, .skill-category:nth-child(2) img { animation-delay: 0.2s; }
-.skill-item:nth-child(3) img, .skill-category:nth-child(3) img { animation-delay: 0.3s; }
-.skill-item:nth-child(4) img, .skill-category:nth-child(4) img { animation-delay: 0.4s; }
-.skill-item:nth-child(5) img, .skill-category:nth-child(5) img { animation-delay: 0.5s; }
 
 /* Section positioning */
 section {
@@ -526,11 +611,10 @@ section {
     margin-right: 10px;
 }
 
-/* Interactive elements styling */
+/* Interactive elements styling - simplified */
 .btn, .nav-link, a:not(.navbar-brand) {
     position: relative;
-    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    overflow: hidden;
+    transition: all 0.3s ease;
 }
 
 /* Remove constant glow from buttons */
@@ -543,7 +627,7 @@ section {
 /* Add hover effects */
 .btn-danger:hover, .nav-link:hover, a:not(.navbar-brand):hover {
     transform: scale(1.05);
-    box-shadow: 0 0 20px rgba(229, 9, 20, 0.6);
+    box-shadow: 0 0 10px rgba(229, 9, 20, 0.4);
 }
 
 .btn-danger:hover {
@@ -552,36 +636,11 @@ section {
 
 /* Add rounded corners to navbar glow */
 .nav-link:hover {
-    box-shadow: 0 0 20px rgba(229, 9, 20, 0.6);
     border-radius: 8px;
     padding: 0.5rem 1rem;
 }
 
-/* Radial gradient effect */
-.btn:before, .nav-link:before, a:not(.navbar-brand):before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 70%);
-    transform: scale(0);
-    opacity: 0;
-    transition: transform 0.6s ease-out, opacity 0.5s ease-out;
-}
-
-.btn:hover:before, .nav-link:hover:before, a:not(.navbar-brand):hover:before {
-    transform: scale(1);
-    opacity: 1;
-}
-
-/* Remove hover effect from navbar brand */
-.navbar-brand:before {
-    display: none;
-}
-
-/* Vertical Progress Bar */
+/* Vertical Progress Bar - simplified */
 .vertical-progress {
     position: fixed;
     right: 0;
@@ -591,7 +650,7 @@ section {
     min-height: 100vh;
     background: rgba(0, 0, 0, 0.3);
     z-index: 9999;
-    transition: all 0.3s ease;
+    transition: width 0.3s ease;
     cursor: pointer;
 }
 
@@ -606,42 +665,12 @@ section {
     left: 0;
     width: 100%;
     height: 0%;
-    background: linear-gradient(to bottom,
-        rgba(229, 9, 20, 0.8),
-        rgba(255, 49, 83, 0.8),
-        rgba(229, 9, 20, 0.8));
+    background: rgba(229, 9, 20, 0.8);
     transition: height 0.1s ease-out;
     min-height: 0;
     max-height: 100%;
 }
 
 .vertical-progress:hover .vertical-progress-bar {
-    background: linear-gradient(to bottom,
-        rgba(229, 9, 20, 1),
-        rgba(255, 49, 83, 1),
-        rgba(229, 9, 20, 1));
+    background: rgba(229, 9, 20, 1);
 }
-
-/* Add glow effect on hover */
-.vertical-progress:hover .vertical-progress-bar::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: radial-gradient(circle at center, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 70%);
-    animation: glowPulse 2s infinite;
-}
-
-@keyframes glowPulse {
-    0% {
-        opacity: 0.5;
-    }
-    50% {
-        opacity: 1;
-    }
-    100% {
-        opacity: 0.5;
-    }
-} 
