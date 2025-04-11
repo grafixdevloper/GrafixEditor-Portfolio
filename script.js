@@ -1,3 +1,5 @@
+import { inject } from "@vercel/analytics"
+
 // Vertical Progress Bar
 document.addEventListener('DOMContentLoaded', function() {
     // Apply custom scrollbar styles dynamically
