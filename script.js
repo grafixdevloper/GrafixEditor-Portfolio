@@ -498,3 +498,43 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
+
+// Projects Filtering Functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const projectItems = document.querySelectorAll('.project-item');
+
+    filterButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const filterValue = this.getAttribute('data-filter');
+            
+            // Remove active from all and add to current
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            this.classList.add('active');
+
+            projectItems.forEach(item => {
+                const category = item.getAttribute('data-category');
+                const isMatch = filterValue === 'all' || category === filterValue;
+
+                if (isMatch) {
+                    item.classList.remove('d-none');
+                    // Force browser reflow to register display change before opacity transition
+                    void item.offsetWidth;
+                    item.classList.remove('fade-out');
+                } else {
+                    item.classList.add('fade-out');
+                    
+                    const onTransitionEnd = function(e) {
+                        if (e.propertyName === 'opacity') {
+                            if (item.classList.contains('fade-out')) {
+                                item.classList.add('d-none');
+                            }
+                            item.removeEventListener('transitionend', onTransitionEnd);
+                        }
+                    };
+                    item.addEventListener('transitionend', onTransitionEnd);
+                }
+            });
+        });
+    });
+});

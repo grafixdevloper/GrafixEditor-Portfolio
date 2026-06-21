@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <!-- Document setup and metadata -->
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Grafix Portfolio</title>
     <meta name="description" content="Professional video editing portfolio showcasing creative work in various formats">
-    
+
     <!-- Preconnect and DNS prefetch for external domains -->
     <link rel="preconnect" href="https://cdn.jsdelivr.net">
     <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
@@ -20,9 +21,9 @@
     <link rel="dns-prefetch" href="https://i.ytimg.com">
     <link rel="preconnect" href="https://formsubmit.co">
     <link rel="dns-prefetch" href="https://formsubmit.co">
-    
+
     <link rel="icon" type="image/png" href="moon-raven.png" sizes="32x32">
-    
+
     <!-- Critical CSS inlined for faster rendering -->
     <style>
         /* Critical styles for above-the-fold content */
@@ -35,12 +36,14 @@
             padding: 0;
             overflow-x: hidden;
         }
-        
-        h1, h2, h3 {
+
+        h1,
+        h2,
+        h3 {
             font-family: 'Playfair Display', serif;
             font-weight: 700;
         }
-        
+
         /* Navigation styling */
         .navbar {
             transition: background-color 0.3s ease;
@@ -48,38 +51,38 @@
             padding: 1rem 0;
             background-color: transparent;
         }
-        
+
         .navbar.scrolled {
             background-color: rgba(0, 0, 0, 0.5);
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
         }
-        
+
         .navbar-brand {
             font-family: 'Montserrat', sans-serif;
             font-weight: 700;
             letter-spacing: 1px;
             padding: 0;
         }
-        
+
         .brand-container {
             display: flex;
             align-items: center;
             gap: 12px;
         }
-        
+
         .brand-text {
             font-size: 1.5rem;
         }
-        
+
         .navbar-brand-image {
             height: 35px;
             width: auto;
             border-radius: 50%;
             object-fit: cover;
         }
-        
+
         .nav-link {
             font-family: 'Montserrat', sans-serif;
             font-weight: 400;
@@ -88,11 +91,11 @@
             color: rgba(255, 255, 255, 0.8) !important;
             transition: color 0.3s ease;
         }
-        
+
         .nav-link:hover {
             color: #fff !important;
         }
-        
+
         /* Hero section styling */
         .hero-section {
             min-height: 100vh;
@@ -103,32 +106,32 @@
             overflow: hidden;
             background: transparent;
         }
-        
+
         .hero-section .overlay {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0,0,0,0.7);
+            background: rgba(0, 0, 0, 0.7);
             z-index: -1;
         }
-        
+
         .hero-content {
             position: relative;
             z-index: 2;
         }
-        
+
         .hero-content h1 {
             text-shadow: 0 0 15px rgba(229, 9, 20, 0.3);
         }
-        
+
         .hero-section .btn-danger {
             background-color: #e50914;
             border: none;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-        
+
         /* Vertical progress bar */
         .vertical-progress {
             position: fixed;
@@ -139,7 +142,7 @@
             background: rgba(255, 255, 255, 0.1);
             z-index: 1000;
         }
-        
+
         .vertical-progress-bar {
             width: 100%;
             height: 0;
@@ -147,7 +150,7 @@
             position: absolute;
             bottom: 0;
         }
-        
+
         /* Motion background */
         #motion-bg {
             position: fixed !important;
@@ -159,7 +162,7 @@
             opacity: 0.5;
             pointer-events: none;
         }
-        
+
         /* Video container for hero */
         .video-background {
             position: absolute;
@@ -170,34 +173,42 @@
             overflow: hidden;
             z-index: -2;
         }
-        
+
         .video-background iframe {
             position: absolute;
             top: 50%;
             left: 50%;
             width: 100vw;
-            height: 56.25vw; /* 16:9 aspect ratio */
+            height: 56.25vw;
+            /* 16:9 aspect ratio */
             min-height: 100vh;
-            min-width: 177.77vh; /* 16:9 aspect ratio */
+            min-width: 177.77vh;
+            /* 16:9 aspect ratio */
             transform: translate(-50%, -50%);
             pointer-events: none;
         }
     </style>
-    
+
     <!-- External CSS with preload for critical resources -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" media="print" onload="this.media='all'">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&family=Montserrat:wght@400;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" media="print"
+        onload="this.media='all'">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&family=Montserrat:wght@400;700&display=swap"
+        rel="stylesheet" media="print" onload="this.media='all'">
+
     <!-- Non-critical CSS loaded asynchronously -->
     <link rel="stylesheet" href="styles.css" media="print" onload="this.media='all'">
-    
+
     <!-- Fallback for browsers that don't support JS -->
     <noscript>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+        <link
+            href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&family=Montserrat:wght@400;700&display=swap"
+            rel="stylesheet">
         <link rel="stylesheet" href="styles.css">
     </noscript>
 </head>
+
 <body>
     <!-- Vertical Progress Bar -->
     <div class="vertical-progress">
@@ -212,7 +223,8 @@
         <div class="container">
             <a class="navbar-brand d-flex align-items-center" href="#">
                 <div class="brand-container">
-                    <img src="moon-raven.png" alt="Moon Raven Logo" class="navbar-brand-image" style="border-radius: 50%; object-fit: cover;">
+                    <img src="moon-raven.png" alt="Moon Raven Logo" class="navbar-brand-image"
+                        style="border-radius: 50%; object-fit: cover;">
                     <span class="brand-text">Grafix</span>
                 </div>
             </a>
@@ -230,6 +242,7 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#projects">Projects</a>
                     </li>
+
                     <li class="nav-item">
                         <a class="nav-link" href="#contact">Contact</a>
                     </li>
@@ -244,7 +257,11 @@
     <!-- Hero section with video background -->
     <section class="hero-section" id="about">
         <div class="video-background">
-            <iframe id="player" src="https://www.youtube-nocookie.com/embed/AukR5L1NcEQ?autoplay=1&mute=1&enablejsapi=1&controls=0&showinfo=0&rel=0&version=3&playerapiid=ytplayer" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy" title="Hero Background Video"></iframe>
+            <iframe id="player"
+                src="https://www.youtube-nocookie.com/embed/AukR5L1NcEQ?autoplay=1&mute=1&enablejsapi=1&controls=0&showinfo=0&rel=0&version=3&playerapiid=ytplayer"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen loading="lazy" title="Hero Background Video"></iframe>
         </div>
         <div class="overlay"></div>
         <div class="container text-center hero-content">
@@ -273,10 +290,10 @@
         <div class="row justify-content-center">
             <div class="col-md-3 skill-item">
                 <h4>
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Adobe_Premiere_Pro_CC_icon.svg/1200px-Adobe_Premiere_Pro_CC_icon.svg.png" 
-                         alt="Premiere Pro Icon"
-                         style="height: 1em; width: auto; vertical-align: middle; margin-right: 8px;"
-                         width="24" height="24" loading="lazy">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/4/40/Adobe_Premiere_Pro_CC_icon.svg"
+                        alt="Premiere Pro Icon"
+                        style="height: 1em; width: auto; vertical-align: middle; margin-right: 8px;" width="24"
+                        height="24" loading="lazy">
                     Adobe Premiere Pro
                 </h4>
                 <div class="progress">
@@ -291,10 +308,10 @@
             </div>
             <div class="col-md-3 skill-item">
                 <h4>
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Adobe_After_Effects_CC_icon.svg/2101px-Adobe_After_Effects_CC_icon.svg.png"
-                         alt="After Effects Icon"
-                         style="height: 1em; width: auto; vertical-align: middle; margin-right: 8px;"
-                         width="24" height="24" loading="lazy">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/cb/Adobe_After_Effects_CC_icon.svg"
+                        alt="After Effects Icon"
+                        style="height: 1em; width: auto; vertical-align: middle; margin-right: 8px;" width="24"
+                        height="24" loading="lazy">
                     After Effects
                 </h4>
                 <div class="progress">
@@ -310,9 +327,9 @@
             <div class="col-md-3 skill-item">
                 <h4>
                     <img src="https://upload.wikimedia.org/wikipedia/commons/4/4d/DaVinci_Resolve_Studio.png"
-                         alt="DaVinci Resolve Icon"
-                         style="height: 1em; width: auto; vertical-align: middle; margin-right: 8px;"
-                         width="24" height="24" loading="lazy">
+                        alt="DaVinci Resolve Icon"
+                        style="height: 1em; width: auto; vertical-align: middle; margin-right: 8px;" width="24"
+                        height="24" loading="lazy">
                     DaVinci Resolve
                 </h4>
                 <div class="progress">
@@ -331,113 +348,236 @@
     <!-- Projects section with video embeds -->
     <section class="container py-5" id="projects">
         <h2 class="text-center mb-5">Featured Projects</h2>
-        <div class="row">
-            <!-- 16:9 Videos -->
-            <div class="col-md-6 mb-4">
-                <div class="card project-card">
-                    <div class="video-container">
-                        <iframe data-src="https://www.youtube-nocookie.com/embed/I8HYHYsqkwU?rel=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy" title="Video Essay Project" class="lazyload"></iframe>
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title">Video Essay / Documentary</h5>
-                        <p class="card-text">An in-depth exploration of AI and cryptography's evolution, featuring dynamic motion graphics and expert insights.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 mb-4">
-                <div class="card project-card">
-                    <div class="video-container">
-                        <iframe data-src="https://www.youtube-nocookie.com/embed/AukR5L1NcEQ?rel=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy" title="Media Analysis Project" class="lazyload"></iframe>
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title">Media Analysis</h5>
-                        <p class="card-text">In-depth video essay exploring cultural trends and media theory through engaging visual storytelling.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 mb-4">
-                <div class="card project-card">
-                    <div class="video-container">
-                        <iframe data-src="https://www.youtube-nocookie.com/embed/dVICHgxW6tg?rel=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy" title="Real Estate Project" class="lazyload"></iframe>
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title">Real Estate</h5>
-                        <p class="card-text">Cinematic real estate showcase highlighting luxury properties and amenities.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 mb-4">
-                <div class="card project-card">
-                    <div class="video-container">
-                        <iframe data-src="https://www.youtube-nocookie.com/embed/rX66EQiqioE?rel=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy" title="Informative Content Project" class="lazyload"></iframe>
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title">Informative Content</h5>
-                        <p class="card-text">Educational video content created for YouTube, delivering valuable insights and knowledge.</p>
-                    </div>
-                </div>
-            </div>
 
-            <!-- 9:16 Videos in one row -->
-            <div class="col-md-4 mb-4">
-                <div class="card project-card">
-                    <div class="video-container" style="padding-bottom: 177.78%">
-                        <iframe data-src="https://www.youtube-nocookie.com/embed/tMLfheh4nFo?rel=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy" title="Fitness Content Project" class="lazyload"></iframe>
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title">Fitness & Yoga Content</h5>
-                        <p class="card-text">Short-form wellness content optimized for Instagram, featuring yoga flows and fitness routines.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 mb-4">
-                <div class="card project-card">
-                    <div class="video-container" style="padding-bottom: 177.78%">
-                        <iframe data-src="https://www.youtube-nocookie.com/embed/i0xnAO8epT4?rel=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy" title="Nutrition Content Project" class="lazyload"></iframe>
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title">Nutrition & Diet Content</h5>
-                        <p class="card-text">Educational short-form content about healthy eating habits and dietary guidelines for Instagram.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 mb-4">
-                <div class="card project-card">
-                    <div class="video-container" style="padding-bottom: 177.78%">
-                        <iframe data-src="https://www.youtube-nocookie.com/embed/xJwyhnT0yiI?rel=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy" title="Daily Vlog Project" class="lazyload"></iframe>
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title">Daily Vlog</h5>
-                        <p class="card-text">Personal daily vlog content optimized for Instagram's vertical format.</p>
-                    </div>
-                </div>
-            </div>
+        <!-- Project category filters -->
+        <div class="filter-container text-center mb-5">
+            <button class="filter-btn active" data-filter="all">All Work</button>
+            <button class="filter-btn" data-filter="cinematic">Short Films</button>
+            <button class="filter-btn" data-filter="essay">Video Essays</button>
+            <button class="filter-btn" data-filter="commercial">Commercials</button>
+            <button class="filter-btn" data-filter="short-form">Short-Form</button>
+            <button class="filter-btn" data-filter="podcast">Podcast</button>
 
-            <!-- 1:1 Videos centered and smaller -->
-            <div class="col-md-4 offset-md-2 mb-4">
-                <div class="card project-card" style="max-width: 400px; margin: 0 auto;">
-                    <div class="video-container" style="padding-bottom: 100%">
-                        <iframe data-src="https://www.youtube-nocookie.com/embed/i_UwRKCFZic?rel=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy" title="Instagram Reels Project" class="lazyload"></iframe>
+            <div class="row">
+                <!-- 16:9 Videos -->
+
+                <!-- Cinematic Short Films -->
+                <div class="col-md-6 mb-4 project-item" data-category="cinematic">
+                    <div class="card project-card">
+                        <div class="video-container">
+                            <iframe data-src="https://www.youtube-nocookie.com/embed/XFpDSov0DBk?rel=0" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen loading="lazy" title="Waadein : A story of promise"
+                                class="lazyload"></iframe>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Waadein : A story of promise (Short Film)</h5>
+                            <p class="card-text">A poignant narrative short film made for a college film competition.
+                                Cinematography and lighting done in collaboration with two friends; editing and
+                                colorgrading done entirely by me.</p>
+                        </div>
                     </div>
-                    <div class="card-body">
-                        <h5 class="card-title">Instagram Reels</h5>
-                        <p class="card-text">Daily vlogs and personal reflections crafted into engaging short-form content.</p>
+                </div>
+
+                <div class="col-md-6 mb-4 project-item" data-category="cinematic">
+                    <div class="card project-card">
+                        <div class="video-container">
+                            <iframe data-src="https://www.youtube-nocookie.com/embed/h1eHNckNNlk?rel=0" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen loading="lazy" title="Dhwani - A short Film" class="lazyload"></iframe>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Dhwani (Short Film)</h5>
+                            <p class="card-text">A compelling short film exploring the psychological journey of a blocked musician facing a critical deadline. Post-production, including structural editing, pacing, and color grading, completed by me.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 mb-4 project-item" data-category="essay">
+                    <div class="card project-card">
+                        <div class="video-container">
+                            <iframe data-src="https://www.youtube-nocookie.com/embed/I8HYHYsqkwU?rel=0" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen loading="lazy" title="Video Essay Project" class="lazyload"></iframe>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Video Essay / Documentary</h5>
+                            <p class="card-text">An in-depth exploration of AI and cryptography's evolution, featuring
+                                dynamic motion graphics and expert insights.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4 project-item" data-category="essay">
+                    <div class="card project-card">
+                        <div class="video-container">
+                            <iframe data-src="https://www.youtube-nocookie.com/embed/AukR5L1NcEQ?rel=0" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen loading="lazy" title="Media Analysis Project" class="lazyload"></iframe>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Media Analysis</h5>
+                            <p class="card-text">In-depth video essay exploring cultural trends and media theory through
+                                engaging visual storytelling.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4 project-item" data-category="commercial">
+                    <div class="card project-card">
+                        <div class="video-container">
+                            <iframe data-src="https://www.youtube-nocookie.com/embed/dVICHgxW6tg?rel=0" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen loading="lazy" title="Real Estate Project" class="lazyload"></iframe>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Real Estate</h5>
+                            <p class="card-text">Cinematic real estate showcase highlighting luxury properties and
+                                amenities.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4 project-item" data-category="essay">
+                    <div class="card project-card">
+                        <div class="video-container">
+                            <iframe data-src="https://www.youtube-nocookie.com/embed/rX66EQiqioE?rel=0" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen loading="lazy" title="Informative Content Project"
+                                class="lazyload"></iframe>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Informative Content</h5>
+                            <p class="card-text">Educational video content created for YouTube, delivering valuable
+                                insights
+                                and knowledge.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 mb-4 project-item" data-category="podcast" id="podcast">
+                    <div class="card project-card">
+                        <div class="video-container">
+                            <iframe data-src="https://www.youtube-nocookie.com/embed/NzQOYPjqsTg?rel=0" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen loading="lazy" title="Podcast Clip" class="lazyload"></iframe>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Podcast Highlight</h5>
+                            <p class="card-text">An engaging podcast highlight clip, featuring dynamic subtitles,
+                                multi-camera pacing, and audio enhancements optimized for social platforms.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 mb-4 project-item" data-category="podcast">
+                    <div class="card project-card">
+                        <div class="video-container">
+                            <iframe data-src="https://www.youtube-nocookie.com/embed/5cSrguOhbXc?rel=0" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen loading="lazy" title="Podcast Edit" class="lazyload"></iframe>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Podcast Edit</h5>
+                            <p class="card-text">A professionally edited podcast sequence featuring smooth multi-camera transitions, noise reduction, and custom branding graphic overlays.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 9:16 Videos in one row -->
+                <div class="col-md-4 mb-4 project-item" data-category="short-form">
+                    <div class="card project-card">
+                        <div class="video-container" style="padding-bottom: 177.78%">
+                            <iframe data-src="https://www.youtube-nocookie.com/embed/tMLfheh4nFo?rel=0" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen loading="lazy" title="Fitness Content Project"
+                                class="lazyload"></iframe>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Fitness & Yoga Content</h5>
+                            <p class="card-text">Short-form wellness content optimized for Instagram, featuring yoga
+                                flows
+                                and fitness routines.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4 project-item" data-category="short-form">
+                    <div class="card project-card">
+                        <div class="video-container" style="padding-bottom: 177.78%">
+                            <iframe data-src="https://www.youtube-nocookie.com/embed/i0xnAO8epT4?rel=0" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen loading="lazy" title="Nutrition Content Project"
+                                class="lazyload"></iframe>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Nutrition & Diet Content</h5>
+                            <p class="card-text">Educational short-form content about healthy eating habits and dietary
+                                guidelines for Instagram.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4 project-item" data-category="short-form">
+                    <div class="card project-card">
+                        <div class="video-container" style="padding-bottom: 177.78%">
+                            <iframe data-src="https://www.youtube-nocookie.com/embed/xJwyhnT0yiI?rel=0" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen loading="lazy" title="Daily Vlog Project" class="lazyload"></iframe>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Daily Vlog</h5>
+                            <p class="card-text">Personal daily vlog content optimized for Instagram's vertical format.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 mb-4 project-item" data-category="short-form">
+                    <div class="card project-card">
+                        <div class="video-container" style="padding-bottom: 177.78%">
+                            <iframe data-src="https://www.youtube-nocookie.com/embed/GrbOQod4_ME?rel=0" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen loading="lazy" title="Reel Abacus 2 Project" class="lazyload"></iframe>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Reel Abacus 2</h5>
+                            <p class="card-text">An engaging promotional Reel highlighting the cognitive benefits of Abacus training, featuring dynamic captioning and educational overlays.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 1:1 Videos centered and smaller -->
+                <div class="col-md-4 mb-4 project-item" data-category="short-form">
+                    <div class="card project-card" style="max-width: 400px; margin: 0 auto;">
+                        <div class="video-container" style="padding-bottom: 100%">
+                            <iframe data-src="https://www.youtube-nocookie.com/embed/i_UwRKCFZic?rel=0" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen loading="lazy" title="Instagram Reels Project"
+                                class="lazyload"></iframe>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Instagram Reels</h5>
+                            <p class="card-text">Daily vlogs and personal reflections crafted into engaging short-form
+                                content.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4 project-item" data-category="short-form">
+                    <div class="card project-card" style="max-width: 400px; margin: 0 auto;">
+                        <div class="video-container" style="padding-bottom: 100%">
+                            <iframe data-src="https://www.youtube-nocookie.com/embed/9nHWXvTrIn4?rel=0" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen loading="lazy" title="Motivational Content Project"
+                                class="lazyload"></iframe>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Motivational Content</h5>
+                            <p class="card-text">Inspirational short-form content designed to motivate and empower
+                                Instagram
+                                audiences.</p>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 mb-4">
-                <div class="card project-card" style="max-width: 400px; margin: 0 auto;">
-                    <div class="video-container" style="padding-bottom: 100%">
-                        <iframe data-src="https://www.youtube-nocookie.com/embed/9nHWXvTrIn4?rel=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy" title="Motivational Content Project" class="lazyload"></iframe>
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title">Motivational Content</h5>
-                        <p class="card-text">Inspirational short-form content designed to motivate and empower Instagram audiences.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
     </section>
+
+
 
     <!-- Contact form section -->
     <section class="container py-5" id="contact">
@@ -448,7 +588,8 @@
                     <input type="hidden" name="_subject" value="New Portfolio Contact Form Submission">
                     <input type="hidden" name="_template" value="table">
                     <input type="hidden" name="_next" value="https://grafix-editor-portfolio.vercel.app/thank-you.html">
-                    <input type="hidden" name="_autoresponse" value="Thank you for your message! I'll get back to you soon.">
+                    <input type="hidden" name="_autoresponse"
+                        value="Thank you for your message! I'll get back to you soon.">
                     <div class="mb-3">
                         <input type="text" name="name" class="form-control" placeholder="Your Name" required>
                     </div>
@@ -456,7 +597,8 @@
                         <input type="email" name="email" class="form-control" placeholder="Your Email" required>
                     </div>
                     <div class="mb-3">
-                        <textarea name="message" class="form-control" rows="5" placeholder="Your Message" required></textarea>
+                        <textarea name="message" class="form-control" rows="5" placeholder="Your Message"
+                            required></textarea>
                     </div>
                     <button type="submit" class="btn btn-danger w-100">Send Message</button>
                 </form>
@@ -472,21 +614,22 @@
     <!-- Scripts - Load non-critical JS asynchronously -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" defer></script>
     <script src="script.js" defer></script>
-    
+
     <!-- Lazy Loading for YouTube Videos -->
     <script src="lazy-load.js" defer></script>
 
-<!--Vercel speed tracking analytics-->
-<script>
-    window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
-  </script>
-  <script defer src="/_vercel/speed-insights/script.js"></script>
+    <!--Vercel speed tracking analytics-->
+    <script>
+        window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
+    </script>
+    <script defer src="/_vercel/speed-insights/script.js"></script>
 
-  <!-- Vercel web traffic analytics-->
-  <script>
-    window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
-  </script>
-  <script defer src="/_vercel/insights/script.js"></script>
-  
+    <!-- Vercel web traffic analytics-->
+    <script>
+        window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+    </script>
+    <script defer src="/_vercel/insights/script.js"></script>
+
 </body>
+
 </html>
